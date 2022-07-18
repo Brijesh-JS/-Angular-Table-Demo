@@ -1,0 +1,167 @@
+.inLabel {
+	width: 130px;
+	display: inline-block;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 97%;
+	margin-top: 20px;
+	margin-left: 12px;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.thead {
+	background: #4ab54a;
+	color: white;
+}
+
+.dInline {
+	display: inline-block;
+}
+.listview {
+	border: 1px solid;
+    width: 95%;
+    margin-top: 25px;
+    margin-left: 12px;
+}
+.name {
+	width: 20%;
+}
+.dec {
+	width: 40%;
+}
+.selopt {
+	width: 9%;
+}
+.selmenu {
+    padding: 12px;
+	color: #4ab54a;
+	font-weight: bold;
+}
+
+.headerDiv {
+	 height: 31px;
+	 border-bottom: 1px solid #4ab54a;
+}
+
+.topnav a {
+  float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	font-size: 14px;
+	background: #4ab54a;
+	color: black;
+	margin-right: 3px;
+	color: white !important;
+	border: 1px solid green;
+	border-top: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd8d8;
+  color: green !important;
+  border-bottom: none;
+  
+}
+
+
+.topnav a.active {
+  background-color: white;
+  color: green !important;
+  border-bottom: none;
+  
+}
+
+.topnav-right {
+  float: right;
+}
+.maindiv {
+	background-color: #fcfcfc;
+    height: 100%;
+    width: 99.7%;
+    border:1px solid;
+    border-top: none;
+}
+.viewinfo {
+	display: inline-block;
+	width: 60%;
+	border-right: 1px solid;
+}
+.addinfo {
+	display: inline-block;
+    position: absolute;
+    margin-top: 15px;
+    width: 30%;
+}
+.inputField {
+	padding-left: 12px;
+}
+.delelebtn {
+	float: right;
+    margin-right: 20px;
+}
+.nameC {
+	width: 5%;
+    text-align: center;
+}
+.nameN {
+	width: 20%;
+}
+.nameD {
+	width: 40%;
+}
+.paginationDiv {
+	float: left;
+	margin-left: 12px;
+}
+.trecDiv {
+	position: absolute;
+    margin-top: 26px;
+    margin-left: 50%;
+}
+.addlbl {
+	padding-left: 12px;
+}
+.addbtn {
+    float: right;
+    margin-right: 21%;
+}
+.errordiv {
+	margin-top: 35px;
+    margin-left: 12px;
+    color: red;
+}
+
+table th:hover{
+	cursor: pointer;
+}
+
+.arrow-down:after,.arrow-up:after{
+	content: ' ';
+	position: relative;
+	left: 2px;
+	border: 8px solid transparent;
+}
+
+.arrow-down:after{
+	top: 13px;
+	border-top-color: white;
+}
+
+.arrow-up:after{
+	bottom: 11px;
+	border-bottom-color: white;
+}
+
+.arrow-down,.arrow-up{
+	padding-right: 10px;
+}

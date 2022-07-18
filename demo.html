@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" 
+         src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js">
+</script>
+<script type="text/javascript"></script>
+<script src="demo.js"></script>
+
+<link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet"                     
+      href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+<link rel="stylesheet" href="demo.css">
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<div class="maindiv">
+	<div class="headerDiv">
+		<div class="topnav">
+		  <div class="topnav-right" onclick="myFunction(event)">
+		    <a ng-class="$index == 0 ? 'active' : ''" ng-repeat="submenu in menuList track by $index" href="#" ng-model="submenu" ng-click="changeMenu(submenu)">{{submenu}}</a>
+		  </div>
+		</div>
+	</div>
+	
+	<div>
+		<div class="viewinfo">
+			<div class="selmenu">{{selMenu}}</div>
+			<div class="inputField">
+				<span>Find </span> <input type="text" ng-model="test" ng-change="changeInput(test)">
+			    <button class="delelebtn" ng-click="deleteItem()">Delete</button>
+			</div>
+			<table>
+			  <tr class="thead">
+			    <th class="nameC">
+			    	  <input type="checkbox" name="infoAll" id="chkall" ng-model="selectAll" ng-change="toggleAll()">
+			    </th>
+			    <th class="nameN" ng-click='sortColumn("name")' ng-class='sortClass("name")'>Name</th>
+			    <th class="nameD" ng-click='sortColumn("description")' ng-class='sortClass("description")'>Description</th>
+			    <th class="nameN" ng-click='sortColumn("webReference")' ng-class='sortClass("webReference")'>Web Reference</th>
+			  </tr>
+			  <tr ng-repeat="report in filteredItems |orderBy:column:reverse |  filter:test track by $index">
+			    <td class="nameC">
+			    	<input type="checkbox" name="info" id="index{{report.id}}" ng-model="options[report.id]" ng-value="report.id" ng-change="toggleInfoTr(report.id)">
+			    </td>
+			    <td class="nameN">{{report.name}}</td>
+			    <td class="nameD">{{report.description}}</td>
+			    <td class="nameN">{{report.webReference}}</td>
+			  </tr>
+			  
+			</table>
+	        <div class="paginationDiv" data-pagination=""
+		             data-num-pages="numOfPages()" 
+		             data-current-page="curPage"
+		             data-max-size="maxSize" 
+		             data-boundary-links="true">
+		    </div>
+
+        	<div class="trecDiv">Total Records : {{totalRecord}}</div>
+    	
+    	</div>
+		
+        <div class="addinfo">
+			  <div class="addlbl">
+				<span class="inLabel">Name </span> <input class="inptval" type="text" ng-model="newName">
+				</div>
+		      <div class="addlbl">
+				<span class="inLabel">Description </span> <input class="inptval" type="text" ng-model="newDec">
+			  </div>
+		      <div class="addlbl">
+				<span class="inLabel">Web Reference </span> <input class="inptval" type="text" ng-model="newWeb">
+				   
+		      </div>
+		      <div class="addlbl">
+				<button class="addbtn" ng-click="addRecord(newName, newDec, newWeb)">Add</button>
+			 </div>
+			 <div ng-if="isError" class="errordiv">
+			 	<div>{{nameError}}</div>
+			 	<div>{{decError}}</div>
+			 	<div>{{webError}}</div>
+			 </div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+</body>
+
+</html>
